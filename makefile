@@ -1,10 +1,12 @@
+CC := gcc
+CF := -O3
+LF := -s
+
 all: bin/sbtool
 
-bin/sbtool: bin/main.o bin/fin.o
-	gcc $^ -o $@
+bin/sbtool: src/main.c src/fin.c
+	$(CC) $(CF) $^ $(LF) -o $@
 
-bin/main.o: src/main.c
-	gcc -c $^ -o $@
-
-bin/fin.o: src/fin.c
-	gcc -c $^ -o $@
+.PHONY: clean
+clean:
+	-rm bin/sbtool 2> /dev/null
