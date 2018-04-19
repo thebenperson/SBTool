@@ -1,6 +1,15 @@
 # SBTool (Switchball Tool)
 
+![screenshots/1.png](screenshots/1.png)
+![screenshots/2.png](screenshots/2.png)
+![screenshots/3.png](screenshots/3.png)
+
 ## Description:
+
+Do the first two images seem similar?
+That's because it's the level shown in the main menu!
+Using SBTool, I replaced the first sky world level with the level shown in the main menu.
+Then, I was able to play it by clicking on the first sky world level.
 
 SBTool is a tool that can extract and create batch files from the game Switchball.
 Switchball stores all of its resources in a file called switchball.batch.
