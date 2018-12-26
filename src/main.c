@@ -416,7 +416,7 @@ int create(int argc, char* argv[]) {
 
 	fseek(file, 4, SEEK_CUR);
 
-	ftw(argv[3], (__ftw_func_t) &createProc, 15);
+	ftw(argv[3], &createProc, 15);
 
 	size_t offset = ftell(file);
 
