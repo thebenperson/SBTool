@@ -38,6 +38,12 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+// windows implementation does not follow posix :(
+
+#ifdef _WIN32
+#define mkdir(path, mode) mkdir(path)
+#endif
+
 typedef struct __attribute__((packed)) {
 
 	uint32_t offset;
@@ -75,7 +81,7 @@ int main(int argc, char* argv[]) {
 		{"list", no_argument, NULL, 'l'},
 		{"extract", required_argument, NULL, 'e'},
 		{"create", required_argument, NULL, 'c'},
-		{NULL, NULL, NULL, NULL}
+		{0, 0, 0, 0}
 
 	};
 
@@ -410,7 +416,7 @@ int create(int argc, char* argv[]) {
 
 	fseek(file, 4, SEEK_CUR);
 
-	ftw(argv[3], createProc, 15);
+	ftw(argv[3], (__ftw_func_t) &createProc, 15);
 
 	size_t offset = ftell(file);
 
