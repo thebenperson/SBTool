@@ -1,0 +1,28 @@
+Two model files: phm for physics and aem for graphical
+
+rm_*[_hd].aem:
+
+signature: 0 (u32), "0MEA" (ascii)
+total_file_size: u32
+
+// upper bounding box
+(x, y, z): float3
+
+// lower bounding box
+(x, y, z): float3
+
+unknown: float[4]
+
+zero: u32
+vertex offset: u32
+
+
+// section
+size:   u32
+offset: u32
+
+// section
+entries: u32 // number of 20 byte entries
+offset: u32
+
+zero: u32
